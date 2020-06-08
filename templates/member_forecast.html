@@ -5,8 +5,9 @@
     <title>member_mail.html</title>
     <link rel="stylesheet" href="./css/member_mail.css">
     <link rel="stylesheet" href="./css/aside.css">
-    
-    
+    <link rel="stylesheet" href="./css/member_forecast.css">
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+	<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <div class="aside">
@@ -19,6 +20,32 @@
             </ul>
     </div>
     <div class="head"></div>
-    <div class="main"></div>
+    <div class="main">
+        <form action="">
+            <div class="layui-form-item" style="margin-top: 30px">
+                <label class="layui-form-label">收件人</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item" style="margin-top: 30px">
+                <label class="layui-form-label">主题</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">正文</label>
+                <div class="layui-input-block" >
+                    <textarea class="layui-textarea" style="height: 300px"></textarea>
+                </div>
+            </div>
+            <button type="button" class="layui-btn layui-btn-normal" style="margin-left: 110px; margin-top: 25px;width: 100px" onclick="panduan()">判断</button>
+            <p id="jieguo" style="margin-left: 110px; margin-top: 25px"></p>
+        </form>
+        
+    </div>
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+    <script src="./js/member_forecast.js"></script>
 </body>
 </html>
