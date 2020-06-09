@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <script src="./js/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="./css/member_register.css">
-<script src="./js/member_login.js"></script>
+
 </head>
 <body>
     <div class="top">
@@ -31,33 +31,10 @@
         </div>
     </div>
     <div class="bottom"></div>
-    
+
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    
-    <script>
-        new Vue({
-            el: "#app",
-            data() {
-                return {
-                    input_clear: '',
-                    input_phone: '',
-                    input_password: '',
-                    queren_password: '',
-                    input_wenti: '',
-                    input_daan: '',
-                }
-            }
-        })
-        $(function(){
-    	    var time=new Date().getTime();
-		    $(".codeimg").attr("src","imgGetCode?t="+time);
-	    })
-    	function imgChange(){
-    		//获得验证码图片对象
-    		var time=new Date().getTime();
-    		$(".codeimg").attr("src","imgGetCode?t="+time);
-    	}
-    </script>
+    <script src="./js/member_login.js"></script>
+
 </body>
 </html>

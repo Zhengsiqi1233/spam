@@ -7,12 +7,12 @@
 		<link rel="stylesheet" href="./css/aside.css">
 		<link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
 		<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-		
+
 		<script src="https://hm.baidu.com/hm.js?d214947968792b839fd669a4decaaffc"></script>
-		
+
 	</head>
 	<body>
-	
+
 		<div class="aside">
 			<img src="./images/logo.png" alt="">
 			<ul>
@@ -24,68 +24,58 @@
 		</div>
 		<div class="head"></div>
 		<div class="main">
-			
+
 			<form class="layui-form">
-			<table class="layui-table">
+				<table class="layui-table">
 					<colgroup>
-					  <col width="150">
-					  <col width="200">
-					  <col>
+						<col width="150">
+						<col width="200">
+						<col>
 					</colgroup>
 					<thead>
-					  <tr>
-						<th>
-							<div class="checkallbox">
-								<input lay-skin="primary" type="checkbox" id="checkall" name="type" lay-filter="allChoose" value="checkall"/>
-								<input type="button" id="Delete" name="Delete" value=" 删 除 " style="margin-left: 5px" />
-							</div>	
-						</th>
-						<th>发件人</th>
-						<th>主题</th>
-						<th>时间</th>
-						<th>是否为垃圾邮件</th>
-						
-					  </tr> 
+						<tr>
+							<th>
+								<div class="checkallbox">
+									<input lay-skin="primary" type="checkbox" id="checkall" name="type" lay-filter="allChoose" value="checkall" />
+									<input type="button" id="Delete" name="Delete" value=" 删 除 " style="margin-left: 5px" />
+								</div>
+							</th>
+							<th>发件人</th>
+							<th>主题</th>
+							<th>时间</th>
+							<th>是否为垃圾邮件</th>
+
+						</tr>
 					</thead>
 					<tbody>
-					  <tr>
-						<td><div class="seach-box"><input lay-skin="primary" type="checkbox" name="Check[]" value="1"/></div></td>
-						<td>贤心</td>
-						<td>2016-11-29</td>
-						<td>人生就像是一场修行</td>
-						<td>是</td>
-					  </tr>
-					  <tr>
-						<td><div class="seach-box"><input lay-skin="primary" type="checkbox" name="Check[]" value="2"/></div></td>
-						<td>许闲心</td>
-						<td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
-						<td>2016-11-29</td>
-						<td>是</td>
-					  </tr>
+						<tr>
+							<td>
+								<div class="seach-box"><input lay-skin="primary" type="checkbox" name="Check[]" value="1" /></div>
+							</td>
+							<td>贤心</td>
+							<td>2016-11-29</td>
+							<td>人生就像是一场修行</td>
+							<td>是</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="seach-box"><input lay-skin="primary" type="checkbox" name="Check[]" value="2" /></div>
+							</td>
+							<td>许闲心</td>
+							<td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+							<td>2016-11-29</td>
+							<td>是</td>
+						</tr>
 					</tbody>
-				  </table>
-				</form>
+				</table>
+			</form>
 
-			  
-		<script src="https://www.layuicdn.com/layui/layui.js"></script>				
-		<script>
-			layui.use(['form','jquery'], function () {
-        	var form = layui.form;
-        	var $ = layui.jquery;
-        	//点击全选, 勾选
-        	form.on('checkbox(allChoose)', function (data) {
-            	var child = $(".seach-box input[type='checkbox']");
-            	child.each(function (index, item) {
-                item.checked = data.elem.checked;
-            });
-            form.render('checkbox');
-        });
-    });
-				</script>
-				<style id="LAY_layadmin_theme">.layui-side-menu,.layadmin-pagetabs .layui-tab-title li:after,.layadmin-pagetabs .layui-tab-title li.layui-this:after,.layui-layer-admin .layui-layer-title,.layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child{background-color:#20222A !important;}.layui-nav-tree .layui-this,.layui-nav-tree .layui-this>a,.layui-nav-tree .layui-nav-child dd.layui-this,.layui-nav-tree .layui-nav-child dd.layui-this a{background-color:#009688 !important;}.layui-layout-admin .layui-logo{background-color:#20222A !important;}</style>
-				
-			
-				<script type="text/javascript" src="./js/member_mail.js"></script>
-			
+
+			<script src="https://www.layuicdn.com/layui/layui.js"></script>
+
+
+
+			<script type="text/javascript" src="./js/member_mail.js"></script>
+
 	</body>
 </html>

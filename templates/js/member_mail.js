@@ -41,4 +41,16 @@ $(function(){
 	　　});
 					
 	　　
-})	
+})
+layui.use(['form','jquery'], function () {
+	var form = layui.form;
+	var $ = layui.jquery;
+	//点击全选, 勾选
+	form.on('checkbox(allChoose)', function (data) {
+		var child = $(".seach-box input[type='checkbox']");
+		child.each(function (index, item) {
+		item.checked = data.elem.checked;
+	})
+	form.render('checkbox');
+})
+})
