@@ -1,7 +1,7 @@
-function showClear(){
-    var a = document.getElementById("clear").value;
+function showAccount(){
+    var a = document.getElementById("account").value;
     if(!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(a)){
-    document.getElementById("aaa").innerText="请输入正确的邮箱";
+    document.getElementById("aaa").innerText="请输入正确的账号";
     }
     else{
         document.getElementById("aaa").innerText="";
@@ -9,7 +9,7 @@ function showClear(){
 }
 function showPassword(){
     var a = document.getElementById("password").value;
-    if(!/^(?=.+[A-Z])(?=.+[a-z])(?=.+[0-9])[A-Za-z0-9]{6,20}$/.test(a)){
+    if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/.test(a)){
     document.getElementById("bbb").innerText="请输入正确的密码";
     }
     else{
@@ -35,8 +35,8 @@ function showPhone(){
         document.getElementById("ddd").innerText="";
     }
 }
-function showWenti(){
-    var a = document.getElementById("wenti").value;
+function showProblem(){
+    var a = document.getElementById("problem").value;
     if(a == ""){
     document.getElementById("eee").innerText="请输入密保问题";
     }
@@ -44,8 +44,8 @@ function showWenti(){
         document.getElementById("eee").innerText="";
     }
 }
-function showDaan(){
-    var a = document.getElementById("daan").value;
+function showAnswer(){
+    var a = document.getElementById("answer").value;
     if(a == ""){
     document.getElementById("fff").innerText="请输入密保答案";
     }
@@ -53,6 +53,19 @@ function showDaan(){
         document.getElementById("fff").innerText="";
     }
 }
+function showMailbox(){
+    var a = document.getElementById("mailbox").value;
+    if(!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(a)){
+    document.getElementById("ggg").innerText="请输入正确的账号";
+    }
+    else{
+        document.getElementById("ggg").innerText="";
+    }
+}
+/**
+ * 清空文本框
+ */
+$(function(){
 new Vue({
     el: "#app",
     data() {
@@ -62,12 +75,48 @@ new Vue({
         }
     }
 })
+})
+
+/**
+ * 验证码
+ */
 $(function(){
     var time=new Date().getTime();
-    $(".codeimg").attr("src","imgGetCode?t="+time);
+    $(".codeimg").attr("src","/api/imgGetCode?t="+time);
 })
 function imgChange(){
     //获得验证码图片对象
     var time=new Date().getTime();
-    $(".codeimg").attr("src","imgGetCode?t="+time);
+    $(".codeimg").attr("src","/api/imgGetCode?t="+time);
 }
+/**
+ * 登录
+ */
+$(function(){
+$(".login").click(function(){
+    var account = $("#account").val();
+    var password = $("#password").val();
+    var inputCode = $("#inputCode").val();
+    console.log(account, password, inputCode);
+    $.ajax({
+        type: "post",
+        url: "/api/member/memberLogin",
+        data: {
+            account: account,
+            password: password,
+            inputCode: inputCode,
+        },
+        dataType: "json",
+        success: function(data) {
+            console.log("返回成功的数据：", data);
+            if(data.gain == 1) {
+                location.href = "member_mail.html";
+                sessionStorage.setItem("memberId",data.memberId);
+				sessionStorage.setItem("memberAccount",data.memberAccount);
+            }else{
+                alert(data.prompt);   
+            }
+        }
+    })
+})
+});

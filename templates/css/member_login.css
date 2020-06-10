@@ -22,7 +22,7 @@
     width: 100;
     height: 70px;
 }
-#clear{
+#account{
     width: 300px;
     
 }
@@ -52,7 +52,7 @@
     width:300px;
     margin-top:50px;
 }
-#num{
+#inputCode{
     -webkit-appearance: none;
     background-color: #FFF;
     background-image: none;
@@ -72,7 +72,7 @@
     width: 150px;
     font-size: 14px;
 }
-#num::-webkit-input-placeholder{
+#inputCode::-webkit-input-placeholder{
     color: #c0c4cc;
     
 }

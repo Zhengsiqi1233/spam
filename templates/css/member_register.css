@@ -39,7 +39,7 @@
     width: 100px;
     height: 40px;
     vertical-align: top;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 40px
 }
 /* .el-input{
@@ -53,9 +53,9 @@
     display: inline-block;
     margin-left:100px;
     width:300px;
-    margin-top:40px;
+    margin-top:25px;
 }
-#num{
+#inputCode{
     -webkit-appearance: none;
     background-color: #FFF;
     background-image: none;
@@ -70,16 +70,17 @@
     outline: 0;
     padding-left:15px;
     padding-right: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 100px;
     width: 150px;
     font-size: 14px;
 }
-#num::-webkit-input-placeholder{
+#inputCode::-webkit-input-placeholder{
     color: #c0c4cc;
     
 }
-#aaa{
+
+ #aaa{
     color: red;
 }
 #bbb{
@@ -97,6 +98,9 @@
 #fff{
     color: red;
 }
+#ggg{
+    color: red;
+} 
 .register{
     margin-left: 100px;
     margin-top: 25px;
@@ -107,6 +111,6 @@
 }
 .login{
     margin-left: 100px;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 300px;
 }

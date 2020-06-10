@@ -62,20 +62,11 @@ function showMailbox(){
         document.getElementById("ggg").innerText="";
     }
 }
-$(function(){
-    new Vue({
-    el: "#app",
-    data() {
-        return {
-            input_clear: '',
-            input_phone: '',
-            input_password: '',
-            input_daan: '',
-            queren_password: '',
-        }
-    }
-})
-})
+
+
+/**
+ * 验证码
+ */
 $(function(){
     var time=new Date().getTime();
     $(".codeimg").attr("src","/api/imgGetCode?t="+time);
@@ -85,56 +76,43 @@ function imgChange(){
     var time=new Date().getTime();
     $(".codeimg").attr("src","/api/imgGetCode?t="+time);
 }
-$(function(){
-    var memberId = sessionStorage.getItem("memberId");
-    var answer = $("#answer").val();
-    var password = $("#password").val();
-    console.log(memberId);
+$(function() {
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                input_clear: '',
+                input_phone: '',
+                input_password: '',
+                queren_password: '',
+            }
+        }
+    })
+})
+$(function() {
+$(".login").click(function(){
+    var account = $("#account").val();
+    var phone = $("#phone").val();
+    console.log(account, phone);
     $.ajax({
-        type: "get",
-        url: "/api/member/memberProtect",
+        type: "post",
+        url: "/api/manager/managerFind",
         data: {
-            memberId: memberId,
+            account: account,
+            phone: phone,
         },
         dataType: "json",
         success: function(data) {
             console.log("返回成功的数据：", data);
-            var problem = data.protectList;
-            console.log(problem[0].problem)
-            $("#problem").html("");
-            var txt = "";
-            txt += `${problem[0].problem} `
-            console.log(txt);
-            $("#problem").html(txt);
-            
+            if(data.gain == 1) {
+                location.href = "manager_findpassword2.html";
+                sessionStorage.setItem("managerId",data.managerId);
+                sessionStorage.setItem("managerAccount",data.managerAccount);
+                sessionStorage.setItem("managerPhone",data.managerPhone);
+            }else{
+                alert(data.prompt);   
+            }
         }
     })
 })
-$(function(){
-    $(".login").click(function(){
-        var memberId = sessionStorage.getItem("memberId");
-        var answer = $("#answer").val();
-        var password = $("#password").val();
-        var inputCode = $("#inputCode").val();
-        $.ajax({
-            type: "post",
-            url: "/api/member/memberfindPassword",
-            data: {
-                answer: answer,
-                password: password,
-                memberId: memberId,
-                inputCode: inputCode,
-            },
-            dataType: "json",
-            success: function(data) {
-                console.log("返回成功的数据：", data);
-                if(data.prompt == "找回密码成功") {
-                    location.href = "member_login.html";
-                }else{
-                    alert(data.prompt); 
-                        
-                }
-            }
-        })
-    })
 })

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <script src="./js/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="./css/member_login.css">
-<script src="./js/member_login.js"></script>
+<script src="./js/manager_login.js"></script>
 </head>
 <body>
     <div class="top">
@@ -15,11 +15,11 @@
     </div>
     <div class="main" >
         <div style="width: 550px;height: 600px;position: relative;margin-left: 800px;margin-top: 50px" id="app">  
-            <el-input v-model="input_clear" placeholder="请输入邮箱" clearable id="clear"  onblur="showClear();"></el-input>
+            <el-input v-model="input_clear" placeholder="请输入账号" clearable id="account"  onblur="showAccount();"></el-input>
             <span id="aaa"></span>
             <el-input placeholder="请输入密码" v-model="input_password" show-password id="password" onblur="showPassword();"></el-input>
             <span id="bbb"></span>
-            <input placeholder="请输入验证码" id="num"></input>
+            <input placeholder="请输入验证码" id="inputCode"></input>
             <img onclick="imgChange()" class="codeimg" src="" />
             <el-link type="primary" class="manager_findpassword" href="manager_findpassword.html">忘记密码？</el-link>
             <el-button type="primary" class="login">登录</el-button>

@@ -86,15 +86,15 @@ function imgChange(){
     $(".codeimg").attr("src","/api/imgGetCode?t="+time);
 }
 $(function(){
-    var memberId = sessionStorage.getItem("memberId");
+    var managerId = sessionStorage.getItem("managerId");
     var answer = $("#answer").val();
     var password = $("#password").val();
-    console.log(memberId);
+    console.log(managerId);
     $.ajax({
         type: "get",
-        url: "/api/member/memberProtect",
+        url: "/api/manager/managerProtect",
         data: {
-            memberId: memberId,
+            managerId: managerId,
         },
         dataType: "json",
         success: function(data) {
@@ -112,24 +112,24 @@ $(function(){
 })
 $(function(){
     $(".login").click(function(){
-        var memberId = sessionStorage.getItem("memberId");
+        var managerId = sessionStorage.getItem("managerId");
         var answer = $("#answer").val();
         var password = $("#password").val();
         var inputCode = $("#inputCode").val();
         $.ajax({
             type: "post",
-            url: "/api/member/memberfindPassword",
+            url: "/api/manager/managerfindPassword",
             data: {
                 answer: answer,
                 password: password,
-                memberId: memberId,
+                managerId: managerId,
                 inputCode: inputCode,
             },
             dataType: "json",
             success: function(data) {
                 console.log("返回成功的数据：", data);
                 if(data.prompt == "找回密码成功") {
-                    location.href = "member_login.html";
+                    location.href = "manager_login.html";
                 }else{
                     alert(data.prompt); 
                         

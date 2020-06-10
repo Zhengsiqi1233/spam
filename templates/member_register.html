@@ -15,18 +15,22 @@
     </div>
     <div class="main" >
         <div style="width: 550px;height: 600px;position: relative;margin-left: 800px;" id="app">  
-            <el-input v-model="input_clear" placeholder="请输入账号" clearable id="clear"  onblur="showClear();"></el-input>
+            <el-input v-model="input_clear" placeholder="请输入账号" clearable id="account"  onblur="showAccount();"></el-input>
             <span id="aaa"></span>
             <el-input v-model="input_phone" placeholder="请输入手机号" clearable id="phone"  onblur="showPhone();"></el-input>
             <span id="ddd"></span>
-            <el-input v-model="input_wenti" placeholder="请输入密保问题" clearable id="wenti"  onblur="showWenti();"></el-input>
+            <el-input v-model="input_mailbox" placeholder="请输入邮箱" clearable id="mailbox"  onblur="showMailbox();"></el-input>
+            <span id="ggg"></span>
+            <el-input v-model="input_wenti" placeholder="请输入密保问题" clearable id="problem"  onblur="showProblem();"></el-input>
             <span id="eee"></span>
-            <el-input v-model="input_daan" placeholder="请输入密保答案" clearable id="daan"  onblur="showDaan();"></el-input>
+            <el-input v-model="input_daan" placeholder="请输入密保答案" clearable id="answer"  onblur="showAnswer();"></el-input>
             <span id="fff"></span>
             <el-input placeholder="请输入密码" v-model="input_password" show-password id="password" onblur="showPassword();"></el-input>
             <span id="bbb"></span>
             <el-input placeholder="请确认密码" v-model="queren_password" show-password id="querenPassword" onblur="querenPassword();"></el-input>
             <span id="ccc"></span>
+            <input placeholder="请输入验证码" id="inputCode"></input>
+            <img onclick="imgChange()" class="codeimg" src="" />
             <el-button type="primary" class="login">确认修改</el-button>
         </div>
     </div>
@@ -34,7 +38,7 @@
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <script src="./js/member_login.js"></script>
+    <script src="./js/member_register.js"></script>
 
 </body>
 </html>
