@@ -54,7 +54,7 @@ $("#Delete").click(function() {
 				var memberId = sessionStorage.getItem("memberId");
 				if(data.code == 1){
 					$.ajax({
-						type:"get",
+						type:"post",
 						url:"/api/mail/mailShow",
 						data:{
 							memberId:memberId,
@@ -106,7 +106,7 @@ $("#Delete").click(function() {
 					var memberId = sessionStorage.getItem("memberId");
 					
 						$.ajax({
-							type:"get",
+							type:"post",
 							url:"/api/mail/mailShow",
 							data:{
 								memberId:memberId,
@@ -166,7 +166,7 @@ $(function() {
 	var memberId = sessionStorage.getItem("memberId");
 	console.log(memberId);
 	$.ajax({
-		type: 'get',
+		type: 'post',
 		url: '/api/mail/mailShow',
 		data: {
 			memberId: memberId,

@@ -1,6 +1,6 @@
 function showAccount(){
     var a = document.getElementById("account").value;
-    if(!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(a)){
+    if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/.test(a)){
     document.getElementById("aaa").innerText="请输入正确的账号";
     }
     else{

@@ -1,6 +1,6 @@
 function showAccount(){
     var a = document.getElementById("account").value;
-    if(!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(a)){
+    if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/.test(a)){
     document.getElementById("aaa").innerText="请输入正确的账号";
     }
     else{
@@ -62,7 +62,7 @@ function showMailbox(){
         document.getElementById("ggg").innerText="";
     }
 }
-$(function(){
+
     new Vue({
     el: "#app",
     data() {
@@ -77,7 +77,7 @@ $(function(){
         }
     }
 })
-})
+
 
 /**
  * 验证码
@@ -92,7 +92,7 @@ function imgChange(){
     $(".codeimg").attr("src","/api/imgGetCode?t="+time);
 }
 
-$(function(){
+
 $(".login").click(function(){
     var account = $("#account").val();
     var phone = $("#phone").val();
@@ -101,9 +101,10 @@ $(".login").click(function(){
     var answer = $("#answer").val();
     var password = $("#password").val();
     var inputCode = $("#inputCode").val();
+    var querenPassword = $("#querenPassword").val();
     console.log(account, phone, mailbox, problem, answer, password);
     $.ajax({
-        type: "get",
+        type: "post",
         url: "/api/member/memberRegister",
         data: {
             account: account,
@@ -113,6 +114,7 @@ $(".login").click(function(){
             answer: answer,
             password: password,
             inputCode: inputCode,
+            querenPassword: querenPassword,
         },
         dataType: "json",
         success: function(data) {
@@ -126,4 +128,3 @@ $(".login").click(function(){
         }
     })
 })
-});
