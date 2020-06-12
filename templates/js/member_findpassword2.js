@@ -62,7 +62,7 @@ function showMailbox(){
         document.getElementById("ggg").innerText="";
     }
 }
-$(function(){
+
     new Vue({
     el: "#app",
     data() {
@@ -75,7 +75,7 @@ $(function(){
         }
     }
 })
-})
+
 $(function(){
     var time=new Date().getTime();
     $(".codeimg").attr("src","/api/imgGetCode?t="+time);
@@ -110,7 +110,7 @@ $(function(){
         }
     })
 })
-$(function(){
+
     $(".login").click(function(){
         var memberId = sessionStorage.getItem("memberId");
         var answer = $("#answer").val();
@@ -137,4 +137,3 @@ $(function(){
             }
         })
     })
-})

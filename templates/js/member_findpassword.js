@@ -76,7 +76,7 @@ function imgChange(){
     var time=new Date().getTime();
     $(".codeimg").attr("src","/api/imgGetCode?t="+time);
 }
-$(function() {
+
     new Vue({
         el: "#app",
         data() {
@@ -88,8 +88,8 @@ $(function() {
             }
         }
     })
-})
-$(function() {
+
+
 $(".login").click(function(){
     var account = $("#account").val();
     var phone = $("#phone").val();
@@ -114,5 +114,4 @@ $(".login").click(function(){
             }
         }
     })
-})
 })

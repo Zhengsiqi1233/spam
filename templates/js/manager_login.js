@@ -65,7 +65,7 @@ function showMailbox(){
 /**
  * 清空文本框
  */
-$(function(){
+
 new Vue({
     el: "#app",
     data() {
@@ -75,7 +75,7 @@ new Vue({
         }
     }
 })
-})
+
 /**
  * 验证码
  */
@@ -91,7 +91,7 @@ function imgChange(){
 /**
  * 登录
  */
-$(function(){
+
     $(".login").click(function(){
         var account = $("#account").val();
         var password = $("#password").val();
@@ -118,4 +118,3 @@ $(function(){
             }
         })
     })
-    });

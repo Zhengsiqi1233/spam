@@ -75,15 +75,15 @@ $(".layui-btn-normal").click(function(){
           });  
     }
     else{
-		var memberId = sessionStorage.getItem("memberId");
+		var managerId = sessionStorage.getItem("managerId");
         $.ajax({
 			type: 'get',
-			url: '/api/member/memberupdatePassword',
+			url: '/api/manager/managerupdatePassword',
 			data: {
 				oldPassword: oldPassword,
 				newPassword: newPassword,
 				repeatPassword: repeatPassword,
-				memberId: memberId,
+				managerId: managerId,
 			},
 			dataType:"json",
     		success:function(data){
@@ -101,18 +101,18 @@ $(".layui-btn-normal").click(function(){
     
 })
 $(function() {
-	var memberId = sessionStorage.getItem("memberId");
-	$("#memberImg").html("");
+	var managerId = sessionStorage.getItem("managerId");
+	$("#managerImg").html("");
 	var txt = "";
 	txt +=`
-	<form action="/api/member/memberImprove" method="post" enctype ="multipart/form-data">
+	<form action="/api/manager/managerImprove" method="post" enctype ="multipart/form-data">
 	<div class="layui-upload">
                   <button type="button" class="layui-btn" id="test1" style="background-color: #1E9FFF">上传图片</button>
                   <div class="layui-upload-list">
-                    <img class="layui-upload-img" id="demo1" src="/api/member/headImg?id=${memberId}">
+                    <img class="layui-upload-img" id="demo1" src="/api/member/headImg?id=${managerId}">
 					<p id="demoText"></p>
 					<input  id="file" name="file" type="file" style="float: left;display:none"/>
-					<input  name="id" type="hidden" value="${memberId}"/>
+					<input  name="id" type="hidden" value="${managerId}"/>
 					
                   </div>
 				</div>
@@ -120,5 +120,5 @@ $(function() {
 				</form>
 	`
 	
-	$("#memberImg").append(txt);
+	$("#managerImg").append(txt);
 })
