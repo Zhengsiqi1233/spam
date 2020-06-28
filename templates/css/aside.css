@@ -4,12 +4,13 @@
 }
 .aside{
     width: 200px;
-    height: 750px;
+    height: 100vh;
     background-color: #1e9fff;
     float: left;
 }
 .head{
     width: 1319px;
+   
     height: 73px;
     background-color: #1e9fff;
     float: left;
